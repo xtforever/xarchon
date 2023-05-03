@@ -135,8 +135,9 @@ static void xaw_toolkit_set_sensitive_options(void *_priv, int game_active)
 static void xaw_toolkit_set_toolkit_active(void *_priv, int active)
 {
    if (active)
-     /* set active */
+     {}     /* set active */
    else
+     {}
      /* quit gui */
 }
 

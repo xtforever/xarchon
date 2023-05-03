@@ -172,7 +172,7 @@ static BOARD_DATA board = { 0 };               /* game status == none */
 
 int board_turn;
 
-static int board_frame_time = 0;
+int board_frame_time = 0;
 
 /*--------------------------------------------------------------------------*/
 /* spells                                                                   */
@@ -423,7 +423,7 @@ void board_init_cell(CELL *cell, int actor_num)
    cell->actor = malloc(sizeof(ACTOR));
    memcpy(cell->actor, &actors_list[actor_num], sizeof(ACTOR));
    cell->actor->sprite = sprite_copy(actors_list[actor_num].sprite, 0);
-   sprite_set_state(cell->actor->sprite, (cell->actor->type & ACTOR_RIGHT ? STATE_MOVE_RIGHT : STATE_MOVE_LEFT), 0);   
+   sprite_set_state(cell->actor->sprite, (cell->actor->type & ACTOR_RIGHT ? STATE_MOVE_RIGHT : STATE_MOVE_LEFT), 0);
 }
 
 /*--------------------------------------------------------------------------*/
@@ -513,7 +513,7 @@ int board_verify_move(int state, int with_actor)
 
       /* if it isn't possible, it might be because the creature is */
       /* blocked by an opponent, or because it's just too far      */
-       
+
       if (actor->type & ACTOR_GROUND &&
           board_cells[y1][x1].actor != NULL &&
           (board_cells[y1][x1].actor->type & ACTOR_LIGHT) ==
@@ -820,7 +820,7 @@ void board_input(void)
                      (state_move_x_step[state] > 0)))
                   /* find the horizontal move in a similar direction */
                   for (use_state = STATE_MOVE_AXIAL_LAST;
-                        state_move_x_step[use_state] != 
+                        state_move_x_step[use_state] !=
                         state_move_x_step[state] ||
                         state_move_y_step[use_state]; use_state--)
                      ;
@@ -865,7 +865,7 @@ void board_cursor(void)
 {
    int old_state;
    int old_cx, old_cy;
-   
+
    old_state = board.state;
    old_cx = board.cx;
    old_cy = board.cy;
@@ -918,7 +918,7 @@ void board_spell(void)
    iface_frame();
    if (board.game_status == 0)
       return;
-   
+
    if (iface_key_down(STATE_FIRE))
       board.fire_down = 1;
    if (board.fire_down && !iface_key_down(STATE_FIRE)) {
@@ -1733,4 +1733,3 @@ int board_get_cell_height()
 {
    return board.cell_h;
 }
-
