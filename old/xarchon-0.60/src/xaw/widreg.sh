@@ -1,0 +1,1 @@
+../../../../xtcw2/LuaRunner/widreg.sh

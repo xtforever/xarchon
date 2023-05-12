@@ -17,12 +17,12 @@ YACC    = bison
 LEX     = flex
 CC = gcc
 
-CFLAGS += -D_GNU_SOURCE -fms-extensions -I$(LUA)
+CFLAGS += -D_GNU_SOURCE -fms-extensions
 CFLAGS += -I$(incdir) -I$(incdir)/xtcw -I/usr/include/freetype2 -I/usr/local/include/freetype2 -I. -I../utils -Ixtcw
 
 XORGLIB=-lXaw -lX11 -lXpm -lXext -lXmu -lXft -lfontconfig -lXrender -lm -lutil  -lmysqlclient -ldl
 
-LOADLIBES=$(libdir)/libxtcw.a $(LUA)/liblua.a $(XORGLIB) -lXt
+LOADLIBES=$(libdir)/libxtcw.a $(XORGLIB) -lXt
 #LOADLIBES+=~/git/libxt-1.1.5/src/.libs/libXt.a -lICE -lSM
 
 # where to find wbuild and wb.sh

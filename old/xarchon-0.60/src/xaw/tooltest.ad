@@ -1,0 +1,33 @@
+*foreground: #1cf0f1
+*background: #ffffff
+*Gridbox.background:lightblue
+
+*fg_norm: #ecf0f1
+*bg_norm: #27ae60
+
+*bg_sel: Red
+*fg_sel: White
+
+*bg_hi: Green
+*fg_hi: Yellow
+
+*Wbutton.xftFont:  DejaVu Sans Condensed-12
+*xftFont: DejaVu Sans Condensed-12
+*family:  DejaVu Sans Condensed
+*fill: Both
+*weightx: 1
+*weighty: 1
+
+tooltest.WcChildren: gb2
+
+*gb2.WcClass: gridbox
+*gb2.WcChildren: zoom sc
+*zoom.WcClass: Wedit
+*zoom.label: 100
+*zoom.fill: none
+*zoom.gravity: center
+*zoom.weighty: 0
+
+*sc.gridy: 1
+*sc.WcClass: Wlabel
+*sc.Label: Hello World

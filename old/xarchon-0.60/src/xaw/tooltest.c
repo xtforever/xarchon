@@ -45,21 +45,16 @@
 #include "font.h"
 
 
-// static inline const char *m_str(const int m) { return m_buf(m); }
-
 Widget TopLevel;
 int trace_main;
-extern int trace_slog;
-
 #define TRACE_MAIN 2
-#define TRACE_SLOG TRACE_MAIN
 
 extern struct RC_DB RC;
 
 char *fallback_resources[] = {
     APP_NAME ".allowShellResize: False",
     "*WclResFiles:" APP_NAME ".ad\n",
-    "*traceLevel: 2"
+    "*traceLevel: 2",
     NULL };
 
 /* All Wcl applications should provide at least these Wcl options:
@@ -213,7 +208,6 @@ int decode_xevent(int m, XEvent* e)
   return s_printf(m,-1,"{ t=\"%s\", x=%d, y=%d }", s, e->xbutton.x, e->xbutton.y );
 }
 
-static String XtNxtConvertVarToArgList = "xtConvertVarToArgList";
 
 /* --------------------------------------------------------------------------------------------------------------------
 
